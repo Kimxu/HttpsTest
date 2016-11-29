@@ -36,6 +36,7 @@ public class PublicKeyPinningTrustManager implements X509TrustManager {
         }
     }
 
+
     private boolean validateCertificatePin(X509Certificate certificate) {
         final byte[] pubKeyInfo = certificate.getPublicKey().getEncoded();
         final byte[] pin = mDigest.digest(pubKeyInfo);
